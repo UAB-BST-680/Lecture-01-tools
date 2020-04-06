@@ -271,29 +271,60 @@ Here we will create three row groups (with row group labels `continent`, `countr
 
 ```{r}
 
-# Create three row groups with the
-# `tab_row_group()` function
-
-gt_tbl_5 <- tab_row_group(
-  data = gt_tbl_4,
-  group = 'Other',
-  rows = 7:10 # you can also use rownames b/c of stub
+# Add a column to islands_tbl
+islands_tbl$group <- c(
+  "Continents",
+  "Continents",
+  "Continents",
+  "Continents",
+  "Continents",
+  "Continents",
+  "Other",
+  "Other",
+  "Other",
+  "Other"
 )
 
-gt_tbl_6 <- tab_row_group(
-  data = gt_tbl_5,
-  group = "Continents",
-  rows = 1:6
-) 
+gt_tbl_1 <- gt(islands_tbl, rowname_col = "name", groupname_col = 'group')
+gt_tbl_2 <- tab_stubhead(data = gt_tbl_1, label = "landmass")
+
+gt_tbl_3 <- tab_header(
+  data = gt_tbl_2,
+  title = md("__Large Landmasses of the World__"),
+  subtitle = md("The _top ten_ largest are presented")
+)
+
+gt_tbl_4 <- tab_source_note(
+  data = gt_tbl_3,
+  source_note = "Source: The World Almanac and Book of Facts, 1975, page 406."
+)
+
+gt_tbl_5 <- tab_source_note(
+  data = gt_tbl_4,
+  source_note = md("McNeil, D.R. (1977) _Interactive Data Analysis_. Wiley.")
+)
 
 # Show the gt Table
-# (note that groups are ordered by last modification)
-gt_tbl_6
+gt_tbl_5
+
 ```
 
 Two *row groups* have been made since there are two unique categories under `groupname`. Across the top of each *row group* is the *row group label* contained in a separate row (these cut across the field and they contain nothing but the *row group label*). A rearrangement of rows is carried out to ensure each of the rows is collected within the appropriate *row groups*.
 
-Having groups of rows in *row groups* is a great way to present information. 
+Having groups of rows in *row groups* is a great way to present information - let's make it even cleaner. The `tab_style()` function lets you access and modify any conceivable part of your table. In this example, we'll access the rows that describe groups and then we'll set their text to be __bold__.
+
+```{r}
+
+gt_tbl_6 <- tab_style(
+  data = gt_tbl_5,
+  locations = cells_row_groups(), 
+  style = cell_text(weight = 'bold')
+)
+
+gt_tbl_6
+
+```
+
 
 We will circle back to grouping rows when we have learned about `group_by` in the `dplyr` package. We will also talk about including data summaries particular to each group is a natural extension of this idea. This process of adding summary rows with *summary labels* is covered [here](https://gt.rstudio.com/articles/creating-summary-lines.html) if you are eager to learn more.
 
@@ -344,11 +375,11 @@ fmt_number(
 
 ```
 
-## But why?
+## But _why_?
 
-Clearly, this is not as straightforward as writing our numbers in a Microsoft Word document. In fact, you probably could have completed 3 tables in Microsoft Word in the amount of time it took me to explain how this code works. 
+Clearly, this is not as straightforward as writing our numbers in a Microsoft Word document. In fact, you probably could have completed 3 tables in Microsoft Word in the amount of time it took me to explain how this code works. So, why bother? 
 
-So, why bother? _Agility_ and _Accuracy_. 
+_Agility_ and _Accuracy_. 
 
 - You will be asked to re-do analyses over and over. 
 
@@ -358,9 +389,9 @@ So, why bother? _Agility_ and _Accuracy_.
 
     + No more copying and pasting your numbers
     
-    + No more errors from copying and pasting numbers incorrectly!
+    + No more errors from copying and pasting numbers to the incorrect place!
 
-- You will also feel like a programming wizard _every time_ you update an automated table.  
+- You will also feel like a programming wizard _every time_ your tables can be updated in an automated way.  
 
 ## Learning more
 
