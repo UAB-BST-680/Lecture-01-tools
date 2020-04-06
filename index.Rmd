@@ -317,4 +317,4 @@ Can you answer these questions?
 
 - Next week we will start in-class exercises as teams.
 
-- Having difficulty? Ask on GitHub or come to office hours!
+- Having difficulty? Ask on GitHub or stay after class for office hours!
