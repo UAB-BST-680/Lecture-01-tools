@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>Introducing your Tools</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Byron C. Jaeger" />
+    <link rel="stylesheet" href="slides.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Introducing your Tools
+## Rstudio cloud and R Markdown
+### Byron C. Jaeger
+### last updated: 2020-04-06
+
+---
+
+
+## Agenda
+
+- R, RStudio, and Rstudio cloud
+
+- R Markdown
+
+By now, you should have
+
+- joined the Rstudio cloud group
+
+- installed R and Rstudio locally
+
+- a GitHub account
+
+- completed your first tutorial!
+
+---
+
+## Toolkit
+
+![toolkit](img/toolkit.png)
+
+- Scriptability `\(\rightarrow\)` R
+
+- Literate scripts (code, narrative, output in one) `\(\rightarrow\)` R Markdown
+
+- Version control `\(\rightarrow\)` Git / GitHub
+
+---
+
+class: center, middle
+
+# R and RStudio
+
+---
+
+## What is R/RStudio?
+
+- R is a statistical programming language
+
+- RStudio is a convenient interface for R (an integreated development environment, IDE)
+
+---
+
+## Let's take a tour - R / RStudio
+
+&lt;center&gt;
+[DEMO]
+&lt;/center&gt;
+
+--
+
+Concepts introduced:
+
+- Console
+
+- Using R as a calculator
+
+- Environment
+
+- Loading and viewing a data frame
+
+- Accessing a variable in a data frame
+
+- R functions
+
+---
+
+## R essentials
+
+A short list (for now):
+
+- Functions are (most often) verbs, followed by what they will be applied to in parentheses:
+
+
+```r
+do_this(to_this)
+do_that(to_this, to_that, with_those)
+```
+
+--
+
+- Columns (variables) in data frames are accessed with `$`:
+
+
+```r
+dataframe$var_name
+```
+
+--
+
+- Packages are installed with the `install.packages` function and loaded with the `library` function, once per session:
+
+
+```r
+install.packages("package_name")
+library(package_name)
+```
+
+---
+
+## What is RStudio cloud?
+
+- A hosted version of RStudio in the cloud that makes it easy to teach and learn data science using R.
+
+---
+
+## Let's take a tour - Rstudio cloud
+
+&lt;center&gt;
+[DEMO]
+&lt;/center&gt;
+
+--
+
+Key points
+
+- Primers and cheatsheets are a valuable resource. 
+
+- Workspace contains projects you can open and interact with. 
+
+    + lectures, homeworks, projects, or tutorials. 
+
+- R projects are collections of related files in a specific working directory
+
+- Make sure to save permanent copies of projects (save your work).
+
+- You and I are the only ones who can view and edit files in your saved projects. (This is how I will grade)
+
+
+---
+
+## What is the Tidyverse?
+
+.pull-left[
+![](img/tidyverse.png)
+]
+
+.pull-right[
+&lt;center&gt;
+&lt;a href="https://www.tidyverse.org/"&gt;tidyverse.org&lt;/a&gt;
+&lt;/center&gt;
+
+- The tidyverse is an opinionated collection of R packages designed for data science. 
+- All packages share an underlying philosophy and a common syntax. 
+]
+
+- I will teach you the essential functions in the tidyverse along with the essential ideas of base R. 
+
+- If there is time, I will also teach a little bit about `data.table`, the package that saved R!
+
+---
+
+class: center, middle
+
+# R Markdown
+
+---
+
+
+## R Markdown
+
+- Fully reproducible reports - each time you knit the analysis will be run from the beginning.
+
+- Simple markdown syntax for text
+
+- Code goes in chunks, defined by three backticks, narrative goes outside of chunks
+
+---
+
+## Let's take a tour - R Markdown
+
+&lt;center&gt;
+[DEMO]
+&lt;/center&gt;
+
+--
+
+Concepts introduced:
+
+- Literate programming
+
+- Knitting documents 
+
+- YAML headers and themes
+
+- tabulating data with `gt`
+
+---
+
+## R Markdown tips
+
+- Keep the [R Markdown cheat sheet](https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf) and Markdown Quick Reference (Help -&gt; Markdown Quick Reference) handy.
+
+- The workspace of your R Markdown document is separate from the Console
+
+---
+
+## How will we use R Markdown?
+
+- Every exercise / assignment / project / etc. is an R Markdown document.
+
+- You'll always have a template R Markdown document to start with.
+
+---
+
+class: center, middle
+
+# Git and GitHub
+
+---
+
+## How do we collaborate?
+
+- The statistical programming language we'll use is R
+
+- The software we use to interface with R is RStudio
+
+But... 
+
+--
+
+- how do I get you the materials for your assignments?
+
+- What happens if I need to update those materials?
+
+- How do I pull my updates into Rstudio cloud?
+
+---
+
+## Version control
+
+- We will only require GitHub use as a platform for collaboration
+
+--
+
+- But it's much more than that...
+
+--
+
+- It's actually desiged for version control
+
+---
+
+## Versioning
+
+![Lego versions](img/lego-steps.png)
+
+---
+
+## Versioning
+
+with human readable messages
+
+![Lego versions with commit messages](img/lego-steps-commit-messages.png)
+
+---
+
+## Why do we need version control?
+
+![PhD Comics](img/phd_comics_vc.gif)
+
+---
+
+# Git and GitHub tips
+
+- Git is a version control system -- like “Track Changes” features from Microsoft Word on steroids. GitHub is the home for your Git-based projects on the internet -- like DropBox but much, much better).
+
+--
+
+- There are millions of git commands -- ok, that's an exaggeration, but there are a lot of them -- and very few people know them all. 99% of the time you will use git to add, commit, push, and pull.
+
+--
+
+- We will be not be requiring any formal interaction with git, but if you are not feeling challenged by the class I recommend learning git in your copious free time. 
+
+- There is a great resource for working with git and R: [happygitwithr.com](http://happygitwithr.com/).
+
+---
+
+class: inverse, center, middle
+
+# Recap
+
+---
+
+## Recap
+
+Can you answer these questions?
+
+- What is R vs RStudio?
+
+- What is R Markdown and why does it matter?
+
+- What is git vs GitHub (and do I need to care)?
+
+- What is version control, and why do we care?
+
+---
+
+## Before next class
+
+- Complete readings and primer (see course website)
+
+- Next week we will start in-class exercises as teams.
+
+- Having difficulty? Ask on GitHub or come to office hours!
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
