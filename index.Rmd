@@ -158,9 +158,7 @@ Key points
 - All packages share an underlying philosophy and a common syntax. 
 ]
 
-- I will teach you the essential functions in the tidyverse along with the essential ideas of base R. 
-
-- If there is time, I will also teach a little bit about `data.table`, the package that saved R!
+- I will teach you the essential functions in the tidyverse along with the essential ideas of base R, including `data.table`.
 
 ---
 
