@@ -24,11 +24,7 @@ By now, you should have
 
 - joined the Rstudio cloud group
 
-- installed R and Rstudio locally
-
 - a GitHub account
-
-- completed your first tutorial!
 
 ---
 
